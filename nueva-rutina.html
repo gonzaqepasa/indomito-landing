@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="es-AR" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- PÁGINA PRIVADA: este formulario se comparte por WhatsApp a los socios.
+       A propósito NO hay links hacia acá desde la landing ni desde eventos, no está en sitemap.xml
+       y le pedimos a Google que no la muestre (noindex). -->
+  <title>Nueva rutina | Indómito Training</title>
+  <meta name="description" content="Completá tus datos y pedí tu rutina personalizada para entrenar en Indómito Training.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0B0B0B">
+
+  <!-- Íconos -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="assets/logo/indomito-icono.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Inter:wght@400;600;700&display=swap">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script>
+    (function (d) {
+      var h = d.documentElement;
+      h.className = h.className.replace('no-js', 'js');
+      if (window.matchMedia && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        h.classList.add('motion-ok');
+        setTimeout(function () { if (!window.__indomitoOK) h.classList.remove('motion-ok'); }, 3000);
+      }
+    })(document);
+  </script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body class="pag-rutina">
+
+  <!-- Íconos reutilizables -->
+  <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-wa" viewBox="0 0 24 24">
+        <path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.42.25-.69.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41"/>
+      </symbol>
+      <symbol id="i-ig" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/>
+        <circle cx="17.4" cy="6.6" r="1.3"/>
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24">
+        <path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-hex" viewBox="0 0 24 26">
+        <path d="M12 1.5 22 7v12l-10 5.5L2 19V7z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      </symbol>
+      <symbol id="i-alerta" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9.2" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 7v6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="12" cy="16.8" r="1.3"/>
+      </symbol>
+      <symbol id="i-reloj" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 7v5.2l3.4 2.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <a class="skip" href="#form-rutina">Saltar al formulario</a>
+
+  <!-- Header simple: solo el logo (vuelve a la página principal) -->
+  <div class="hdr-sentinel" aria-hidden="true"></div>
+  <header class="hdr hdr--simple" id="hdr">
+    <div class="hdr__in">
+      <a class="hdr__logo" href="index.html" aria-label="Indómito Training, ir a la página principal">
+        <span class="hdr__icon"><img src="assets/logo/indomito-icono.svg" width="48" height="44" alt=""></span>
+        <span class="hdr__name" aria-hidden="true">Indómito <span>Training</span></span>
+      </a>
+      <span class="hdr__tag">Rutinas</span>
+    </div>
+    <div class="hdr__progress" aria-hidden="true"></div>
+  </header>
+
+  <main id="main" tabindex="-1" class="rutina">
+    <div class="wrap rutina__grid">
+
+      <!-- Columna de información -->
+      <aside class="rutina__info">
+        <p class="eyebrow rv"><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg>Indómito Training</p>
+        <h1 class="rutina__t rv">Nueva <em>rutina.</em></h1>
+        <p class="bajada rv">Completá tus datos y pedí tu rutina 100% personalizada para entrenar en el Búnker.</p>
+
+        <ol class="pasos rv">
+          <li><span class="pasos__n">1</span><div><b>Completás el formulario</b><span>Te lleva un par de minutos.</span></div></li>
+          <li><span class="pasos__n">2</span><div><b>Se abre nuestro WhatsApp</b><span>Con un mensaje armado y tu número de pedido (ID).</span></div></li>
+          <li><span class="pasos__n">3</span><div><b>Lo enviás sin cambiarlo</b><span>Así encontramos tu pedido rápido y te armamos la rutina.</span></div></li>
+        </ol>
+
+        <p class="recordatorio rv"><svg aria-hidden="true"><use href="#i-reloj"/></svg>Recordá cambiar tu rutina cada tres semanas.</p>
+      </aside>
+
+      <!-- Formulario. No guarda ni envía nada a ningún servidor: solo arma el mensaje de WhatsApp en tu celular. -->
+      <div class="rutina__card rv">
+        <noscript>
+          <p class="aviso aviso--error">Para pedir tu rutina con este formulario necesitás tener JavaScript activado. También podés escribirnos directo al <a href="https://wa.me/541138785934">WhatsApp</a>.</p>
+        </noscript>
+
+        <div class="avance" aria-hidden="true"><span class="avance__track"><span class="avance__bar"></span></span><span class="avance__txt">0% completo</span></div>
+
+        <form id="form-rutina" class="form" novalidate>
+
+          <!-- 01 · Tus datos -->
+          <fieldset class="form__grupo">
+            <legend class="form__leg"><span>01</span>Tus datos</legend>
+
+            <div class="campo">
+              <label for="f-nombre">Nombre y apellido</label>
+              <input id="f-nombre" name="nombre" type="text" autocomplete="name" maxlength="80" required placeholder="Ej.: Juan Pérez" aria-describedby="e-nombre">
+              <p class="campo__error" id="e-nombre"></p>
+            </div>
+
+            <div class="campos-3">
+              <div class="campo">
+                <label for="f-edad">Edad</label>
+                <div class="campo__unidad" data-unidad="años">
+                  <input id="f-edad" name="edad" type="number" inputmode="numeric" min="10" max="99" step="1" required placeholder="31" aria-describedby="e-edad">
+                </div>
+                <p class="campo__error" id="e-edad"></p>
+              </div>
+              <div class="campo">
+                <label for="f-peso">Peso</label>
+                <div class="campo__unidad" data-unidad="kg">
+                  <input id="f-peso" name="peso" type="number" inputmode="decimal" min="25" max="250" step="0.1" required placeholder="68" aria-describedby="h-peso e-peso">
+                </div>
+                <p class="campo__ayuda" id="h-peso">En kilos.</p>
+                <p class="campo__error" id="e-peso"></p>
+              </div>
+              <div class="campo">
+                <label for="f-altura">Altura</label>
+                <div class="campo__unidad" data-unidad="cm">
+                  <input id="f-altura" name="altura" type="number" inputmode="numeric" min="100" max="230" step="1" required placeholder="176" aria-describedby="h-altura e-altura">
+                </div>
+                <p class="campo__ayuda" id="h-altura">En centímetros (100 cm = 1 m).</p>
+                <p class="campo__error" id="e-altura"></p>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- 02 · Tu entrenamiento -->
+          <fieldset class="form__grupo">
+            <legend class="form__leg"><span>02</span>Tu entrenamiento</legend>
+
+            <div class="campo" role="radiogroup" aria-labelledby="l-plan" aria-describedby="e-plan">
+              <p class="campo__label" id="l-plan">Plan en el gimnasio</p>
+              <div class="opciones opciones--plan">
+                <label class="opcion">
+                  <input type="radio" name="plan" value="2 Días" required>
+                  <span class="opcion__in"><b>2 días</b><small>por semana</small></span>
+                </label>
+                <label class="opcion">
+                  <input type="radio" name="plan" value="3 Días">
+                  <span class="opcion__in"><b>3 días</b><small>por semana</small></span>
+                </label>
+                <label class="opcion">
+                  <input type="radio" name="plan" value="Libre">
+                  <span class="opcion__in"><b>Libre</b><small>pase libre</small></span>
+                </label>
+              </div>
+              <p class="campo__error" id="e-plan"></p>
+            </div>
+
+            <div class="campo" role="radiogroup" aria-labelledby="l-exp" aria-describedby="e-exp">
+              <p class="campo__label" id="l-exp">¿Cuánto hace que entrenás?</p>
+              <div class="opciones opciones--exp">
+                <label class="opcion opcion--txt">
+                  <input type="radio" name="experiencia" value="Nunca entrené">
+                  <span class="opcion__in"><b>Nunca</b><small>arranco de cero</small></span>
+                </label>
+                <label class="opcion opcion--txt">
+                  <input type="radio" name="experiencia" value="Menos de 6 meses">
+                  <span class="opcion__in"><b>Menos de 6 meses</b></span>
+                </label>
+                <label class="opcion opcion--txt">
+                  <input type="radio" name="experiencia" value="6 meses a 2 años">
+                  <span class="opcion__in"><b>6 meses a 2 años</b></span>
+                </label>
+                <label class="opcion opcion--txt">
+                  <input type="radio" name="experiencia" value="Más de 2 años">
+                  <span class="opcion__in"><b>Más de 2 años</b></span>
+                </label>
+              </div>
+              <p class="campo__error" id="e-exp"></p>
+            </div>
+
+            <div class="campo" role="radiogroup" aria-labelledby="l-tipo" aria-describedby="e-tipo">
+              <p class="campo__label" id="l-tipo">¿Es tu primera rutina o un cambio?</p>
+              <div class="opciones opciones--dos">
+                <label class="opcion opcion--txt">
+                  <input type="radio" name="tipo" value="Primera rutina">
+                  <span class="opcion__in"><b>Primera rutina</b><small>recién empiezo acá</small></span>
+                </label>
+                <label class="opcion opcion--txt">
+                  <input type="radio" name="tipo" value="Cambio de rutina" data-muestra-radio="d-cambio">
+                  <span class="opcion__in"><b>Cambio de rutina</b><small>ya tuve una</small></span>
+                </label>
+              </div>
+              <p class="campo__error" id="e-tipo"></p>
+            </div>
+
+            <!-- Aparece solo si eligió "Cambio de rutina" -->
+            <div class="condicional" id="d-cambio" hidden>
+              <div class="campo">
+                <label for="f-anterior">¿Cómo te fue con la rutina anterior? ¿Qué querés que cambie?</label>
+                <textarea id="f-anterior" name="anterior" rows="3" maxlength="400" placeholder="Ej.: me gustó, pero quiero más trabajo de piernas" aria-describedby="h-anterior"></textarea>
+                <p class="campo__ayuda" id="h-anterior">Opcional, pero nos ayuda mucho.</p>
+              </div>
+            </div>
+
+            <div class="salud salud--suelta">
+              <div class="salud__fila">
+                <span class="salud__q" id="q-deportes">¿Hacés otro deporte o actividad?</span>
+                <label class="switch">
+                  <input type="checkbox" role="switch" id="t-deportes" data-muestra="d-deportes" aria-labelledby="q-deportes">
+                  <span class="switch__ui" aria-hidden="true"><i>No</i><i>Sí</i></span>
+                </label>
+              </div>
+              <div class="campo salud__detalle" id="d-deportes" hidden>
+                <label for="f-deportes">¿Cuál y cuántas veces por semana?</label>
+                <textarea id="f-deportes" name="deportes" rows="2" maxlength="300" placeholder="Ej.: fútbol 2 veces por semana" aria-describedby="e-deportes"></textarea>
+                <p class="campo__error" id="e-deportes"></p>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- 03 · Tu objetivo -->
+          <fieldset class="form__grupo">
+            <legend class="form__leg"><span>03</span>Tu objetivo</legend>
+
+            <div class="campo">
+              <label for="f-objetivos">¿Qué te gustaría lograr en las próximas semanas?</label>
+              <textarea id="f-objetivos" name="objetivos" rows="4" maxlength="500" required placeholder="Ej.: subir de peso y ganar masa muscular" aria-describedby="e-objetivos"></textarea>
+              <p class="campo__error" id="e-objetivos"></p>
+            </div>
+
+            <div class="campo" role="group" aria-labelledby="l-pref" aria-describedby="h-pref e-pref">
+              <p class="campo__label" id="l-pref">Preferencias</p>
+              <p class="campo__ayuda" id="h-pref">Elegí uno o varios tipos de entrenamiento.</p>
+              <div class="opciones opciones--chips">
+                <label class="chip"><input type="checkbox" name="preferencias" value="Musculación"><span><svg aria-hidden="true"><use href="#i-check"/></svg>Musculación</span></label>
+                <label class="chip"><input type="checkbox" name="preferencias" value="Funcional"><span><svg aria-hidden="true"><use href="#i-check"/></svg>Funcional</span></label>
+                <label class="chip"><input type="checkbox" name="preferencias" value="Crossfit"><span><svg aria-hidden="true"><use href="#i-check"/></svg>Crossfit</span></label>
+                <label class="chip"><input type="checkbox" name="preferencias" value="Peso corporal"><span><svg aria-hidden="true"><use href="#i-check"/></svg>Peso corporal</span></label>
+                <label class="chip"><input type="checkbox" name="preferencias" value="Cardio"><span><svg aria-hidden="true"><use href="#i-check"/></svg>Cardio</span></label>
+              </div>
+              <p class="campo__error" id="e-pref"></p>
+            </div>
+          </fieldset>
+
+          <!-- 04 · Salud (opcional) -->
+          <fieldset class="form__grupo">
+            <legend class="form__leg"><span>04</span>Para cuidarte</legend>
+            <p class="form__nota">Si no tenés nada para contarnos, dejalo en "No".</p>
+
+            <div class="salud">
+              <div class="salud__fila">
+                <span class="salud__q" id="q-lesiones">¿Tenés alguna lesión?</span>
+                <label class="switch">
+                  <input type="checkbox" role="switch" id="t-lesiones" data-muestra="d-lesiones" aria-labelledby="q-lesiones">
+                  <span class="switch__ui" aria-hidden="true"><i>No</i><i>Sí</i></span>
+                </label>
+              </div>
+              <div class="campo salud__detalle" id="d-lesiones" hidden>
+                <label for="f-lesiones">Contanos qué lesión tenés</label>
+                <textarea id="f-lesiones" name="lesiones" rows="3" maxlength="400" placeholder="Ej.: molestia en la rodilla derecha" aria-describedby="e-lesiones"></textarea>
+                <p class="campo__error" id="e-lesiones"></p>
+              </div>
+            </div>
+
+            <div class="salud">
+              <div class="salud__fila">
+                <span class="salud__q" id="q-patologias">¿Tenés alguna patología?</span>
+                <label class="switch">
+                  <input type="checkbox" role="switch" id="t-patologias" data-muestra="d-patologias" aria-labelledby="q-patologias">
+                  <span class="switch__ui" aria-hidden="true"><i>No</i><i>Sí</i></span>
+                </label>
+              </div>
+              <div class="campo salud__detalle" id="d-patologias" hidden>
+                <label for="f-patologias">Contanos qué patología tenés</label>
+                <textarea id="f-patologias" name="patologias" rows="3" maxlength="400" placeholder="Ej.: hipertensión" aria-describedby="e-patologias"></textarea>
+                <p class="campo__error" id="e-patologias"></p>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="aviso">
+            <svg aria-hidden="true"><use href="#i-alerta"/></svg>
+            <p><strong>Importante.</strong> Este formulario arma un mensaje para que nos lo mandes por WhatsApp. Cuando se abra, envialo sin modificarlo.</p>
+          </div>
+
+          <p class="form__resumen" role="alert" id="form-resumen" hidden></p>
+
+          <button class="btn btn--rojo btn--xl btn--block form__enviar" type="submit">
+            <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Solicitar rutina
+          </button>
+          <p class="form__priv">No guardamos tus datos en esta página: van directo a nuestro WhatsApp.</p>
+        </form>
+
+        <!-- Estado "listo" (lo muestra main.js después de tocar Solicitar rutina) -->
+        <div class="listo" id="form-listo" hidden tabindex="-1">
+          <span class="listo__ico" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+          <h2 class="listo__t">Pedido armado.</h2>
+          <p>Tu número de pedido es <b class="listo__id" id="listo-id"></b>. Se abrió WhatsApp con el mensaje: envialo sin cambiarlo.</p>
+          <a class="btn btn--rojo btn--lg" id="listo-link" href="https://wa.me/541138785934" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Si no se abrió, tocá acá</a>
+          <button class="listo__otra" type="button" id="listo-otra">Corregir mis datos</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="pie-mini">
+    <div class="wrap pie-mini__in">
+      <a href="https://wa.me/541138785934" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Escribinos al WhatsApp</a>
+      <a href="https://www.instagram.com/indomito.training/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-ig"/></svg>@indomito.training</a>
+      <p>© <span data-year>2026</span> Indómito Training · Del Viso, Pilar</p>
+    </div>
+  </footer>
+</body>
+</html>

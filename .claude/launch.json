@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "indomito",
+      "runtimeExecutable": "C:\\Program Files\\nodejs\\node.exe",
+      "runtimeArgs": ["C:\\Users\\Gonzi\\AppData\\Local\\Temp\\claude\\5bbd8b6d8f399349\\b3472915-2a45-4a31-a8c7-fb957caab88b\\scratchpad\\serve.js", "C:\\Users\\Gonzi\\Desktop\\Landing 2", "5500"],
+      "port": 5500
+    }
+  ]
+}

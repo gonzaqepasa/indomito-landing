@@ -1,0 +1,16 @@
+# Indómito Training · configuración para el hosting (DonWeb)
+
+# Red de seguridad: si por error se suben carpetas o archivos internos,
+# el servidor responde "no encontrado" en lugar de mostrarlos.
+RedirectMatch 404 (?i)^/(Contexto|_originales|\.claude)(/|$)
+RedirectMatch 404 (?i)\.(md|zip|pdf)$
+
+# Direcciones sin ".html": /nueva-rutina abre nueva-rutina.html y /eventos abre eventos.html.
+# Así siguen funcionando los links viejos (por ejemplo, indomitotraining.com/nueva-rutina).
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
+</IfModule>
