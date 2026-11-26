@@ -1,5 +1,4 @@
-# TODO: dominio. Cambiá TU-DOMINIO.com.ar por el dominio definitivo.
 User-agent: *
 Allow: /
 
-Sitemap: https://www.TU-DOMINIO.com.ar/sitemap.xml
+Sitemap: https://www.indomitotraining.com/sitemap.xml
