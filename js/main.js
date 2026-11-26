@@ -100,7 +100,13 @@
 
   /* ---------- 3c. CUENTA REGRESIVA (página de eventos) ---------- */
   $all('[data-cuenta]').forEach(function (box) {
-    var objetivo = fechaLocal(box.getAttribute('data-cuenta'), false); // cuenta hasta el inicio de ese día
+    // Formato "2026-12-18" (cuenta hasta el inicio del día) o "2026-12-18T21:00" (hasta esa hora)
+    var partes = box.getAttribute('data-cuenta').split('T');
+    var objetivo = fechaLocal(partes[0], false);
+    if (partes[1]) {
+      var hm = partes[1].split(':').map(Number);
+      objetivo.setHours(hm[0] || 0, hm[1] || 0, 0, 0);
+    }
     var celdas = {};
     ['d', 'h', 'm', 's'].forEach(function (u) { celdas[u] = box.querySelector('[data-u="' + u + '"]'); });
     var previo = {};
@@ -120,6 +126,33 @@
     }
     var intervalo = setInterval(function () { if (!document.hidden) pintar(); }, 1000);
     pintar();
+  });
+
+  /* ---------- 3d. BOTÓN "COPIAR" (alias de transferencia en fiesta.html) ---------- */
+  $all('[data-copiar]').forEach(function (btn) {
+    var txt = btn.querySelector('span');
+    var original = txt ? txt.textContent : '';
+    var live = document.getElementById('copiado-live');
+    btn.addEventListener('click', function () {
+      var valor = btn.getAttribute('data-copiar');
+      function ok() {
+        btn.classList.add('is-ok');
+        if (txt) txt.textContent = '¡Copiado!';
+        if (live) live.textContent = 'Alias copiado: ' + valor;
+        setTimeout(function () { btn.classList.remove('is-ok'); if (txt) txt.textContent = original; }, 2200);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(valor).then(ok, copiarViejo);
+      } else copiarViejo();
+      // Respaldo para navegadores viejos: copia desde un campo temporal
+      function copiarViejo() {
+        var t = document.createElement('textarea');
+        t.value = valor; t.setAttribute('readonly', ''); t.style.position = 'fixed'; t.style.opacity = '0';
+        document.body.appendChild(t); t.select();
+        try { document.execCommand('copy'); ok(); } catch (e) { /* nada */ }
+        t.remove();
+      }
+    });
   });
 
   /* ---------- 4. HEADER Y MENÚ ---------- */
@@ -359,6 +392,35 @@
     fills.forEach(function (f) { f.words.forEach(function (w) { w.classList.add('lit'); }); f.lit = f.words.length; });
   }
 
+  /* ---------- 8b. LÍNEA DE LOS 30 DÍAS (reto.html) ----------
+     La línea dorada se llena a medida que bajás y cada paso se enciende cuando la línea lo alcanza. */
+  var lineas = $all('[data-linea]').map(function (el) {
+    return { el: el, pasos: $all('.linea__paso', el), top: 0, h: 0, last: '', marcas: [] };
+  });
+  function measureLineas() {
+    lineas.forEach(function (l) {
+      var r = l.el.getBoundingClientRect();
+      l.top = r.top + window.scrollY; l.h = Math.max(1, r.height); l.last = '';
+      l.marcas = l.pasos.map(function (p) { return (p.offsetTop + 14) / l.h; });
+    });
+  }
+  function updateLineas(y) {
+    lineas.forEach(function (l) {
+      var q = clamp((y + vh * 0.6 - l.top) / l.h, 0, 1);
+      var v = q.toFixed(3);
+      if (v === l.last) return;
+      l.last = v;
+      l.el.style.setProperty('--lp', v);
+      l.pasos.forEach(function (p, i) { p.classList.toggle('on', q >= l.marcas[i]); });
+    });
+  }
+  function lineasFinal() {
+    lineas.forEach(function (l) {
+      l.el.style.setProperty('--lp', '1');
+      l.pasos.forEach(function (p) { p.classList.add('on'); });
+    });
+  }
+
   /* ---------- 9. EL BÚNKER ---------- */
   var bunker = (function () {
     var el = document.querySelector('.bunker');
@@ -435,6 +497,7 @@
     updateProgress(y);
     if (!motionOK()) return;
     updateFills(y);
+    updateLineas(y);
     if (bunker) bunker.update(y);
     updateParallax(y);
   }
@@ -453,6 +516,7 @@
     docH = document.documentElement.scrollHeight;
     if (hero) hero.measure();
     measureFills();
+    measureLineas();
     measureParallax();
     onScroll();
   }
@@ -796,6 +860,7 @@
     finishReveal();
     counters.forEach(counterFinal);
     fillsFinal();
+    lineasFinal();
     if (hold) hold.complete();
     if (window.__marquee) window.__marquee.unbuild();
     measureAll();
@@ -814,6 +879,7 @@
   } else {
     finishReveal();
     fillsFinal();
+    lineasFinal();
     if (hold) hold.complete();
   }
 

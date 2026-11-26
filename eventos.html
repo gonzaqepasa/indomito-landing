@@ -85,6 +85,10 @@
       <symbol id="i-hex" viewBox="0 0 24 26">
         <path d="M12 1.5 22 7v12l-10 5.5L2 19V7z" fill="none" stroke="currentColor" stroke-width="1.8"/>
       </symbol>
+      <symbol id="i-ticket" viewBox="0 0 24 24">
+        <path d="M3 7.5a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1V10a2 2 0 0 0 0 4v2.5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V14a2 2 0 0 0 0-4Z" fill="none" stroke="currentColor" stroke-width="1.9"/>
+        <path d="M14 7v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="2 2"/>
+      </symbol>
       <symbol id="i-reloj" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/>
         <path d="M12 7v5.2l3.4 2.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -113,7 +117,7 @@
 
       <nav class="nav" id="menu" aria-label="Principal">
         <ul class="nav__list">
-          <li><a class="nav__link nav__link--reto" href="index.html#reto"><svg class="ico ico--oro" aria-hidden="true"><use href="#i-corona"/></svg>Reto Elite</a></li>
+          <li><a class="nav__link nav__link--reto" href="reto.html"><svg class="ico ico--oro" aria-hidden="true"><use href="#i-corona"/></svg>Reto Elite</a></li>
           <li><a class="nav__link" href="index.html#clases">Clases</a></li>
           <li><a class="nav__link" href="index.html#planes">Planes</a></li>
           <li><a class="nav__link nav__link--eventos" href="eventos.html" aria-current="page">Eventos<i class="punto" aria-hidden="true"></i></a></li>
@@ -151,7 +155,7 @@
     <!-- ===================== PRÓXIMO EVENTO: FIESTA DE FIN DE AÑO =====================
          Único lugar de la web general donde va el dorado (Manual de Marca: eventos especiales).
          data-hasta="2026-12-18": después de esa fecha este bloque se oculta solo.
-         TODO: hora, lugar y entradas de la fiesta. Cuando estén, sumalos en "fiesta__info". -->
+         Toda la info (qué incluye y cómo pagar) está en fiesta.html. -->
     <section class="fiesta lz" id="proximo" aria-labelledby="fiesta-t" data-hasta="2026-12-18">
       <div class="fiesta__bg" aria-hidden="true">
         <span class="fiesta__num" data-par="0.14">18.12</span>
@@ -182,15 +186,15 @@
           <p class="fiesta__lead rv">Un año entero dejando todo en el Búnker. Ahora toca festejarlo juntos.</p>
           <ul class="fiesta__info rv">
             <li><svg aria-hidden="true"><use href="#i-calendario"/></svg><span><b>Viernes 18 de diciembre</b> de 2026</span></li>
-            <!-- TODO: hora y lugar. Ejemplo: <li><svg aria-hidden="true"><use href="#i-reloj"/></svg><span><b>21 h</b> · Lugar</span></li> -->
-            <li><svg aria-hidden="true"><use href="#i-wa"/></svg><span>Hora, lugar y entradas: te contamos todo por WhatsApp.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-reloj"/></svg><span>De <b>21:00 a 05:00 h</b></span></li>
+            <li class="precio"><svg aria-hidden="true"><use href="#i-ticket"/></svg><span><b>$50.000 por persona</b>, podés pagar en cuotas</span></li>
           </ul>
           <div class="fiesta__ctas rv">
-            <a class="btn btn--oro btn--xl js-wa" data-wa="Hola! Quiero info de la Fiesta de Fin de Año de Indómito 🎉" href="https://wa.me/5491149702957?text=Hola!%20Quiero%20info%20de%20la%20Fiesta%20de%20Fin%20de%20A%C3%B1o%20de%20Ind%C3%B3mito%20%F0%9F%8E%89" target="_blank" rel="noopener">
-              <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Quiero ir
+            <a class="btn btn--oro btn--xl" href="fiesta.html#reservar">
+              <svg class="ico" aria-hidden="true"><use href="#i-ticket"/></svg>Reservá tu lugar
             </a>
-            <a class="btn btn--oro-linea btn--xl" href="https://www.instagram.com/indomito.training/" target="_blank" rel="noopener">
-              <svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg>Novedades
+            <a class="btn btn--oro-linea btn--xl" href="fiesta.html">
+              Qué incluye<svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg>
             </a>
           </div>
         </div>
@@ -200,8 +204,8 @@
           <div class="entrada__in">
             <p class="entrada__dia">Viernes</p>
             <p class="entrada__num">18</p>
-            <p class="entrada__mes">Diciembre 2026</p>
-            <div class="cuenta" data-cuenta="2026-12-18" aria-live="off">
+            <p class="entrada__mes">Diciembre 2026 · 21 h</p>
+            <div class="cuenta" data-cuenta="2026-12-18T21:00" aria-live="off">
               <p class="cuenta__t">Faltan</p>
               <div class="cuenta__grid">
                 <div><span class="cuenta__n" data-u="d">--</span><span class="cuenta__u">días</span></div>
@@ -309,7 +313,7 @@
         </div>
         <div>
           <p class="pie__h">Secciones</p>
-          <p><a href="index.html#reto">Reto Elite</a> · <a href="index.html#clases">Clases</a> · <a href="index.html#planes">Planes</a> · <a href="eventos.html">Eventos</a> · <a href="index.html#faq">Preguntas</a></p>
+          <p><a href="reto.html">Reto Elite</a> · <a href="index.html#clases">Clases</a> · <a href="index.html#planes">Planes</a> · <a href="eventos.html">Eventos</a> · <a href="index.html#faq">Preguntas</a></p>
         </div>
       </div>
     </div>

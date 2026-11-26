@@ -152,7 +152,7 @@
 
       <nav class="nav" id="menu" aria-label="Principal">
         <ul class="nav__list">
-          <li><a class="nav__link nav__link--reto" href="#reto"><svg class="ico ico--oro" aria-hidden="true"><use href="#i-corona"/></svg>Reto Elite</a></li>
+          <li><a class="nav__link nav__link--reto" href="reto.html"><svg class="ico ico--oro" aria-hidden="true"><use href="#i-corona"/></svg>Reto Elite</a></li>
           <li><a class="nav__link" href="#clases">Clases</a></li>
           <li><a class="nav__link" href="#planes">Planes</a></li>
           <li><a class="nav__link nav__link--eventos" href="eventos.html">Eventos<i class="punto" aria-hidden="true"></i></a></li>
@@ -243,7 +243,7 @@
               <a class="btn btn--rojo btn--lg js-wa" href="https://wa.me/5491149702957?text=Hola!%20Quiero%20reservar%20mi%20clase%20de%20prueba%20gratis%20en%20Ind%C3%B3mito%20%F0%9F%92%AA" target="_blank" rel="noopener">
                 <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Reservá tu clase gratis
               </a>
-              <a class="btn btn--oro-linea btn--lg" href="#reto">
+              <a class="btn btn--oro-linea btn--lg" href="reto.html">
                 <svg class="ico ico--oro" aria-hidden="true"><use href="#i-corona"/></svg>Reto Elite 30 días
               </a>
             </div>
@@ -264,10 +264,9 @@
       </ul>
     </section>
 
-    <!-- ===================== 4. RETO INDÓMITO ELITE (producto destacado, dorado) =====================
-         Versión inicial del programa: puede cambiar. La web NO pide datos de salud, peso ni fotos:
-         el formulario de inicio se maneja por WhatsApp. -->
-    <section class="reto lz" id="reto" aria-labelledby="reto-t">
+    <!-- ===================== 4. RETO INDÓMITO ELITE (adelanto, dorado) =====================
+         La info completa del reto está en reto.html (página propia para compartir el link). -->
+    <section class="reto reto--home lz" id="reto" aria-labelledby="reto-t">
       <div class="reto__bg" aria-hidden="true">
         <svg class="reto__marca" data-par="0.12"><use href="#i-corona"/></svg>
       </div>
@@ -281,61 +280,33 @@
           <p class="reto__badge rv"><span>Reto Indómito</span> <b>Elite</b> <span class="reto__badge-sep">·</span> <span>30 días</span></p>
           <h2 class="reto__t rv" id="reto-t">¿Cuántas veces arrancaste un plan y lo dejaste <em>a mitad de camino?</em></h2>
           <p class="reto__lead rv">La diferencia esta vez es que no vas a hacerlo solo/a.</p>
-          <!-- TODO: definir quién acompaña el reto. El texto original habla en primera persona ("te acompaño"). -->
-          <p class="reto__txt rv">Durante 30 días te acompañamos de cerca: un plan adaptado a vos, seguimiento constante y alguien que esté ahí para corregirte, motivarte y ayudarte a cumplir el objetivo.</p>
 
-          <h3 class="reto__h3 rv">Qué incluye</h3>
           <ul class="reto__list" data-stagger>
-            <!-- TODO: confirmar quién arma el plan de alimentación (en Argentina lo indica un licenciado en nutrición). -->
             <li class="rv"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Plan de alimentación personalizado</li>
-            <li class="rv"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Entrenamiento adaptado a tu objetivo, presencial o virtual</li>
-            <li class="rv"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Rutinas nuevas cada vez que entrenás</li>
-            <li class="rv"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Acceso libre al gimnasio durante todo el programa</li>
+            <li class="rv"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Entrenamiento adaptado a tu objetivo</li>
+            <li class="rv"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Acceso libre al gimnasio</li>
             <li class="rv"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Seguimiento diario por WhatsApp</li>
-            <li class="rv"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Ajustes semanales según tu evolución</li>
-            <li class="rv"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Apoyo con los hábitos y motivación todos los días</li>
           </ul>
 
-          <blockquote class="reto__idea rv">
-            <p>No queremos que hagas una dieta de 30 días. Queremos que aprendas a alimentarte, a entrenar con un propósito y a construir hábitos que te acompañen toda la vida.</p>
-          </blockquote>
+          <div class="reto__ctas rv">
+            <a class="btn btn--oro btn--xl" href="reto.html">Conocé el reto<svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></a>
+            <a class="btn btn--oro-linea btn--xl js-wa" data-wa="QUIERO EMPEZAR" href="https://wa.me/5491149702957?text=QUIERO%20EMPEZAR" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Quiero empezar</a>
+          </div>
         </div>
 
-        <aside class="ticket rv" aria-label="Sumate al Reto Indómito Elite">
-          <div class="ticket__in">
-            <p class="ticket__kicker">Sumate al reto</p>
-
-            <!-- Momento interactivo: mantener apretado llena los 30 días. Es solo un gesto: el botón de WhatsApp de abajo funciona siempre. -->
-            <button class="hold" type="button" aria-label="Mantené apretado para aceptar el reto de 30 días" aria-describedby="hold-ayuda">
-              <svg class="hold__ring" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
-                <circle class="hold__track" cx="100" cy="100" r="76"/>
-                <g class="hold__ticks"></g>
-              </svg>
-              <span class="hold__center" aria-hidden="true">
-                <svg class="hold__corona"><use href="#i-corona"/></svg>
-                <span class="hold__dia">Día</span>
-                <span class="hold__num"><b>30</b>/30</span>
-              </span>
-            </button>
-            <p class="hold__ayuda" id="hold-ayuda">Mantené apretado para aceptar el reto</p>
-            <p class="sr-only" aria-live="polite" id="hold-live"></p>
-
-            <div class="ticket__precio">
-              <p class="precio precio--oro"><span class="precio__num">$70.000</span><span class="precio__per">30 días, todo incluido</span></p>
-              <p class="precio-consulta">Consultá el valor por WhatsApp</p>
-              <p class="precio precio__nota">Son $25.000 más que el pase libre: esa diferencia paga tu plan de alimentación y el seguimiento diario.</p>
-            </div>
-
-            <a class="btn btn--oro btn--xl btn--block js-wa ticket__cta" data-wa="QUIERO EMPEZAR" href="https://wa.me/5491149702957?text=QUIERO%20EMPEZAR" target="_blank" rel="noopener">
-              <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Quiero empezar
-            </a>
-            <p class="ticket__micro">Escribinos <strong>“QUIERO EMPEZAR”</strong> y arrancamos hoy mismo. Todo se coordina por WhatsApp.</p>
-            <p class="ticket__micro ticket__micro--alt">¿Preferís conocernos antes? <a class="js-wa" href="https://wa.me/5491149702957?text=Hola!%20Quiero%20reservar%20mi%20clase%20de%20prueba%20gratis%20en%20Ind%C3%B3mito%20%F0%9F%92%AA" target="_blank" rel="noopener">Tomá la clase de prueba gratis</a>.</p>
-          </div>
-        </aside>
+        <a class="ticket ticket--link rv" href="reto.html" aria-label="Ver el Reto Indómito Elite: 30 días">
+          <span class="ticket__in">
+            <span class="ticket__kicker">Reto Indómito Elite</span>
+            <svg class="reto__corona-xl" aria-hidden="true"><use href="#i-corona"/></svg>
+            <span class="reto__30" aria-hidden="true">30</span>
+            <span class="reto__dias" aria-hidden="true">días para cambiar de verdad</span>
+            <span class="ticket__precio reto__precio-home">
+              <span class="precio">$70.000 · todo incluido</span><span class="precio-consulta">Consultá el valor</span>
+            </span>
+            <span class="reto__ver">Ver todo el reto <svg aria-hidden="true"><use href="#i-flecha"/></svg></span>
+          </span>
+        </a>
       </div>
-
-      <p class="reto__cierre wrap rv">Los resultados no aparecen por suerte. Aparecen cuando el compromiso se encuentra con <em>un buen plan.</em></p>
     </section>
 
     <!-- ===================== 5. POR QUÉ INDÓMITO ===================== -->
@@ -537,16 +508,16 @@
               <div class="panel__cap"><span class="panel__n">Al aire libre</span><h3>El patio</h3><p>Espacio abierto dentro del Búnker para entrenar distinto.</p></div>
             </li>
             <!-- PRÓXIMO EVENTO: se oculta solo después de la fecha de data-hasta (año-mes-día).
-                 Todos los eventos (próximos y pasados) están en eventos.html. -->
+                 Lleva a fiesta.html (qué incluye y cómo pagar). Todos los eventos están en eventos.html. -->
             <li class="panel panel--evento" data-hasta="2026-12-18">
-              <a class="evento" href="eventos.html">
+              <a class="evento" href="fiesta.html">
                 <span class="panel__n panel__n--oro"><i class="punto" aria-hidden="true"></i>Próximo evento</span>
                 <h3 class="evento__t">Fiesta de <em>Fin de Año</em></h3>
                 <div class="evento__fiesta">
                   <span class="evento__fecha">Vie 18/12</span>
-                  <p>Cerramos el 2026 juntos y en equipo.</p>
+                  <p>De 21 a 05 h. Cerramos el 2026 juntos y en equipo.</p>
                 </div>
-                <span class="evento__ver">Ver todos los eventos <svg aria-hidden="true"><use href="#i-flecha"/></svg></span>
+                <span class="evento__ver">Ver info y cómo reservar <svg aria-hidden="true"><use href="#i-flecha"/></svg></span>
               </a>
             </li>
           </ul>
@@ -724,7 +695,7 @@
           </details>
           <details class="qa rv" name="faq">
             <summary>¿Qué es el Reto Indómito Elite?<i aria-hidden="true"></i></summary>
-            <div class="qa__a"><p>Un programa de 30 días con plan de alimentación, entrenamiento adaptado a tu objetivo, acceso libre al gimnasio y seguimiento diario por WhatsApp. Para arrancar, escribinos “QUIERO EMPEZAR”.</p></div>
+            <div class="qa__a"><p>Un programa de 30 días con plan de alimentación, entrenamiento adaptado a tu objetivo, acceso libre al gimnasio y seguimiento diario por WhatsApp. Para arrancar, escribinos “QUIERO EMPEZAR”. <a href="reto.html">Ver todo el reto</a>.</p></div>
           </details>
           <details class="qa rv" name="faq">
             <summary>¿Cómo se paga?<i aria-hidden="true"></i></summary>
@@ -784,7 +755,7 @@
         </div>
         <div>
           <p class="pie__h">Secciones</p>
-          <p><a href="#reto">Reto Elite</a> · <a href="#clases">Clases</a> · <a href="#planes">Planes</a> · <a href="eventos.html">Eventos</a> · <a href="#faq">Preguntas</a></p>
+          <p><a href="reto.html">Reto Elite</a> · <a href="#clases">Clases</a> · <a href="#planes">Planes</a> · <a href="eventos.html">Eventos</a> · <a href="#faq">Preguntas</a></p>
         </div>
       </div>
     </div>
